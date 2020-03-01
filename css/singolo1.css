@@ -426,10 +426,19 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     transition: .15s linear;
+    position: relative;
 }
 
 .social-icon:hover {
     transform: translateY(-2px);
+}
+
+.social-icon a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
 }
