@@ -150,7 +150,7 @@ ul {
 }
 
 .arrow--back:active {
-    left: 33px;
+    left: 3%;
 }
 
 .arrow--next {
@@ -158,7 +158,7 @@ ul {
 }
 
 .arrow--next:active {
-    right: 33px;
+    right: 3%;
 }
 
 
@@ -576,7 +576,71 @@ ul {
         padding: 0 49px;
     }
 
+
     .slider {
         height: 447px;
+    }
+
+
+    .phone__container {
+        height: inherit;
+        align-items: stretch;
+    }
+    .phone--vertical {
+        width: 180px;
+        height: 363px;
+        margin-top: 40px;
+    }
+    .phone--horizontal {
+        width: 363px;
+        height: 180px;
+        margin-top: 133px;
+    }
+    .phone--vertical,
+    .phone--horizontal {
+        margin-left: 41px;
+        margin-right: 41px;
+    }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        padding: 0 32px;
+    }
+
+    .slider {
+        height: 218px;
+    }
+    .arrow--back {
+        left: 10px;
+    }
+    .arrow--back:active {
+        left: 5px;
+    }
+    .arrow--next {
+        right: 10px;
+    }
+    .arrow--next:active {
+        right: 5px;
+    }
+
+    .phone--vertical {
+        min-width: 88px;
+        min-height: 177px;
+        margin-top: 20px;
+    }
+    .phone--horizontal {
+        min-width: 177px;
+        min-height: 88px;
+        margin-top: 65px;
+    }
+    
+    .phone--vertical {
+       margin-left: 16px;
+       margin-right: 16px;
+    }
+    .phone--horizontal {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
