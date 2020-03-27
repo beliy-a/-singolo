@@ -462,18 +462,21 @@ ul {
 
 .get-quote__desc {
     color: #f0d8d9;
+    font-weight: 300;
     font-size: 18px;
     line-height: 1.7;
     letter-spacing: -.25px;
     margin-bottom: 43px;
 }
 
-.get-coute__flex-container {
+
+.get-quote__flex-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* form */
-.form__get-coute {
+.form__get-quote {
     width: 66%;
 }
 
@@ -509,9 +512,25 @@ ul {
 
 .form__group textarea {
     width: 100%; 
-    height: 203px;
+    height: 159px;
     resize: none;
     padding: 13px 16px;
+}
+.form__buttons .button {
+    padding: 10px 45px;
+}
+
+.button {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #886A30;
+    border: none;
+    background-color: #FBC65F;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -534,6 +553,7 @@ ul {
     letter-spacing: -.2px;
     line-height: 1.8;
     margin-bottom: 29px;
+    text-align: justify;
 }
 
 .contacts__item,
@@ -669,6 +689,25 @@ ul {
     .worker__about-me {
         margin-bottom: 5px;
     }
+
+    /* get-quote */
+    .get-quote {
+        padding: 53px 0 39px;
+    }
+    .get-quote__desc {
+        margin-bottom: 19px;
+    }
+    .contacts__title {
+        margin-bottom: 0;
+    }
+    .contacts__text {
+        margin-bottom: 20px;
+    }
+
+    .form__group {
+        margin-bottom: 12px;
+    }
+    
 }
 
 @media (max-width: 375px) {
@@ -784,5 +823,23 @@ ul {
     }
     .worker__about-me {
         margin-bottom: 9px;
+    }
+
+    /* get-quote */
+    .get-quote {
+        padding: 44px 0 37px;
+    }
+    .form__get-quote {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+    .form__buttons .button {
+        padding: 14px 0;
+        width: 100%;
+    }
+
+    .contacts {
+        padding-left: 0;
+        width: 100%;
     }
 }
