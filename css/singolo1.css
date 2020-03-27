@@ -577,11 +577,10 @@ ul {
     }
 
 
+    /* slider */
     .slider {
         height: 447px;
     }
-
-
     .phone__container {
         height: inherit;
         align-items: stretch;
@@ -608,6 +607,21 @@ ul {
         padding: 0 32px;
     }
 
+    /* header */
+    .header {
+        padding: 24px 0;
+    }
+    .header__flex {
+        justify-content: center;
+    }
+    .logo__name {
+        font-size: 19px;
+    }
+    .header__navigation {
+        display: none;
+    }
+
+    /* slider */
     .slider {
         height: 218px;
     }
@@ -625,13 +639,13 @@ ul {
     }
 
     .phone--vertical {
-        min-width: 88px;
-        min-height: 177px;
+        max-width: 88px;
+        max-height: 177px;
         margin-top: 20px;
     }
     .phone--horizontal {
-        min-width: 177px;
-        min-height: 88px;
+        max-width: 177px;
+        max-height: 88px;
         margin-top: 65px;
     }
     
