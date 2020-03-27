@@ -1,4 +1,4 @@
-
+@import 'burger-menu.css';
 
 ::before,
 ::after,
@@ -49,6 +49,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    position: relative;
 }
 
 /* logo */
@@ -101,6 +102,10 @@ ul {
 .navigation__link:hover:not(.active),
 .navigation__link:focus:not(.active) {
     opacity: .7;
+}
+
+.header .burger__menu {
+    display: none;
 }
 
 /* Active Nav */
@@ -600,6 +605,27 @@ ul {
         margin-left: 41px;
         margin-right: 41px;
     }
+
+    /* our-service */
+    .our-service {
+        padding: 40px 0 25px;
+    }
+    .our-service__desc {
+        margin-bottom: 29px;
+    }
+    .our-service__card {
+        width: calc(100% / 2 - 30px);
+        margin-bottom: 39px;
+    }
+    .our-service__card:nth-child(3n+2) {
+        margin: 0;
+    }
+    .our-service__card:nth-child(even) {
+        margin-left: 59px;
+    }
+    .card__desc__text {
+        text-align: justify;
+    }
 }
 
 @media (max-width: 375px) {
@@ -619,6 +645,12 @@ ul {
     }
     .header__navigation {
         display: none;
+    }
+    .header .burger__menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     /* slider */
@@ -656,5 +688,24 @@ ul {
     .phone--horizontal {
         margin-left: 0;
         margin-right: 0;
+    }
+
+
+    /* our-service */
+    .our-service {
+        padding: 25px 0 15px;
+    }
+    .our-service__desc {
+        margin-bottom: 25px;
+    }
+    .our-service__card:nth-child(even) {
+        margin-left: 0;
+    }
+    .our-service__card {
+        width: calc(100% / 1);
+        margin-bottom: 39px !important;
+    }
+    .our-service__card:last-child {
+        margin-bottom: 0 !important;
     }
 }
