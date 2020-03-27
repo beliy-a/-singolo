@@ -337,8 +337,9 @@ ul {
 }
 
 .project__card__photo {
-    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -626,6 +627,18 @@ ul {
     .card__desc__text {
         text-align: justify;
     }
+
+
+    /* portfolio*/
+    .portfolio__tabs {
+        margin-bottom: 28px;
+    }
+
+
+    .project__card {
+        width: calc(100% / 3 - 20px);
+        height: 183px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -707,5 +720,19 @@ ul {
     }
     .our-service__card:last-child {
         margin-bottom: 0 !important;
+    }
+
+
+    /* portfolio*/
+    .portfolio {
+        padding: 42px 0 32px;
+    }
+    .portfolio__project {
+        margin: 0 -5px;
+    }
+    .project__card {
+        width: calc(100% / 2 - 10px);
+        height: 128px;
+        margin: 0 5px 10px;
     }
 }
