@@ -575,7 +575,7 @@ ul {
 
 .footer {
     background-color: #2d303a;
-    padding: 20px 0;
+    padding: 22px 0;
 }
 
 .footer__flex {
@@ -841,5 +841,13 @@ ul {
     .contacts {
         padding-left: 0;
         width: 100%;
+    }
+
+    /* footer */
+    .footer__flex {
+        justify-content: center;
+    }
+    .footer__copy {
+        display: none;
     }
 }
