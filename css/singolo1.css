@@ -396,9 +396,10 @@ ul {
     display: flex;
 }
 
-.tabs__list .active {
+.tabs__list .selected {
     color: #dedede;
-    border: 1px solid #c5c5c5;
+    border-color: #c5c5c5;
+    cursor: default;
 }
 
 .tabs__item {

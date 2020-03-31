@@ -74,3 +74,44 @@ function removeModifierForSlider(item) {
     let modifier = item.getAttribute('class').split(' ').filter(cls => cls !== 'slider').join(' ');
     item.classList.remove(modifier);
 }
+
+
+// portfolio tabs
+const portfolioProject = document.querySelector('.portfolio__project');
+const portfolioTabs = document.querySelector('.portfolio__tabs').addEventListener('click', e => {
+
+    mixItems(e, portfolioProject);
+    addSelectedTab(e);
+});
+
+function mixItems(e, parent) {
+    let target = e.target;
+    const currentChildren = [...parent.children];
+    let length = currentChildren.length;
+
+    if (target.tagName == 'LI' && !target.classList.contains('selected')) {
+
+        while (length > 0) {
+            let randomItem = generateItem(length - 1);
+            parent.append(currentChildren[randomItem]);
+            currentChildren.splice(randomItem, 1);
+            length--;
+        }
+    }
+}
+
+function generateItem(n) {
+    return Math.round(Math.random() * n);
+}
+
+function addSelectedTab(e) {
+    let target = e.target;
+
+    if (target.tagName == 'LI' && !target.classList.contains('selected')) {
+        target.parentNode.querySelectorAll('.tabs__item').forEach(cls => {
+            cls.classList.contains('selected') && cls.classList.remove('selected');
+            return;
+        });
+        target.classList.add('selected');
+    }
+}
