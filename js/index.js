@@ -71,6 +71,6 @@ function addModifierForSlider(item) {
 }
 
 function removeModifierForSlider(item) {
-    let modifier = item.getAttribute('class').split(' ').filter(cls => cls !== 'slider');
+    let modifier = item.getAttribute('class').split(' ').filter(cls => cls !== 'slider').join(' ');
     item.classList.remove(modifier);
 }
