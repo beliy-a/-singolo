@@ -1,6 +1,6 @@
 // header navigation
-const headerNav = document.querySelector('.header__navigation .navigation__list');
-headerNav.addEventListener('click', addClassActive);
+const headerList = document.querySelector('.navigation__list');
+headerList.addEventListener('click', addClassActive);
 
 function addClassActive(e) {
     let target = e.target;
@@ -14,6 +14,29 @@ function addClassActive(e) {
     }
 }
 
+// burger
+const burgerMenu = document.querySelector('.burger__menu');
+const headerNav = document.querySelector('.header__navigation');
+let isEnb = true;
+
+burgerMenu.addEventListener('click', function () {
+    this.classList.toggle('burger__menu--active');
+    if (this.classList.contains('burger__menu--active') && isEnb) {
+        isEnb = false;
+        headerNav.classList.add('header__navigation--block');
+        setTimeout(() => {
+            headerNav.classList.add('header__navigation--translate');
+            isEnb = true;
+        }, 0);
+    } else {
+        isEnb = false;
+        headerNav.classList.remove('header__navigation--translate');
+        setTimeout(() => {
+            headerNav.classList.remove('header__navigation--block');
+            isEnb = true;
+        }, 500);
+    }
+});
 
 // slider
 const slider = document.querySelector('.slider');

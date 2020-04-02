@@ -16,6 +16,7 @@
     position: absolute;
     top: 50%;
     margin-top: -1.2px;
+    transition: .5s linear;
 }
 
 .burger__line::before {
@@ -26,4 +27,8 @@
 .burger__line::after {
     content: '';
     transform: translateY(7px);
+}
+
+.burger__menu--active .burger__line{
+    transform: rotate(45deg);
 }
