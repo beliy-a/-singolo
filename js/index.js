@@ -17,26 +17,58 @@ function addClassActive(e) {
 // burger
 const burgerMenu = document.querySelector('.burger__menu');
 const headerNav = document.querySelector('.header__navigation');
+let navigationOverlay = createDomNode();
 let isEnb = true;
 
 burgerMenu.addEventListener('click', function () {
     this.classList.toggle('burger__menu--active');
+
     if (this.classList.contains('burger__menu--active') && isEnb) {
-        isEnb = false;
-        headerNav.classList.add('header__navigation--block');
-        setTimeout(() => {
-            headerNav.classList.add('header__navigation--translate');
-            isEnb = true;
-        }, 0);
+        showNavMenu(navigationOverlay, ['header__navigation--block', 'header__navigation--translate']);
+        
     } else {
-        isEnb = false;
-        headerNav.classList.remove('header__navigation--translate');
-        setTimeout(() => {
-            headerNav.classList.remove('header__navigation--block');
-            isEnb = true;
-        }, 500);
+        hideNavMenu(navigationOverlay, ['header__navigation--block', 'header__navigation--translate']);
     }
 });
+
+document.addEventListener('click', (e) => {
+    let target = e.target;
+
+    if (target.tagName === 'DIV' && target.classList.contains('overlay')) {
+        hideNavMenu(navigationOverlay, ['header__navigation--block', 'header__navigation--translate']);
+        burgerMenu.classList.remove('burger__menu--active');
+    }
+});
+
+function showNavMenu(overlay, [navBlock, navAnimation]) {
+    isEnb = false;
+    headerNav.classList.add(navBlock);
+    document.body.append(overlay);
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+        headerNav.classList.add(navAnimation);
+        isEnb = true;
+    }, 0);
+}
+
+function hideNavMenu(overlay, [navBlock, navAnimation]) {
+    isEnb = false;
+    headerNav.classList.remove(navAnimation);
+    document.body.style.overflow = 'visible';
+    setTimeout(() => {
+        headerNav.classList.remove(navBlock);
+        overlay.remove();
+        isEnb = true;
+    }, 500);
+}
+
+function createDomNode() {
+    let overlay = document.createElement('div');
+    overlay.className = 'overlay';
+
+    return overlay;
+}
+
 
 // slider
 const slider = document.querySelector('.slider');
